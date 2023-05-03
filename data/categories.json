@@ -1,0 +1,38 @@
+[
+    {
+        "categoryId": "science",
+        "name": "Science"
+    },
+    {
+        "categoryId": "film_and_tv",
+        "name": "Film and TV"
+    },
+    {
+        "categoryId": "music",
+        "name": "Music"
+    },
+    {
+        "categoryId": "history",
+        "name": "History"
+    },
+    {
+        "categoryId": "geography",
+        "name": "Geography"
+    },
+    {
+        "categoryId": "art_and_literature",
+        "name": "Art and Literature"
+    },
+    {
+        "categoryId": "sport_and_leisure",
+        "name": "Sports and Leisure"
+    },
+    {
+        "categoryId": "general_knowledge",
+        "name": "General Knowledge"
+    },
+    {
+        "categoryId": "food_and_drink",
+        "name": "Food and Drink"
+    }
+]

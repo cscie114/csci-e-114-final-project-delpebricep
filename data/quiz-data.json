@@ -1,0 +1,15 @@
+[
+    {
+        "quizId": 1,
+        "name": "Quiz A",
+        "slug": "quiz-a",
+        "difficulty": "easy",
+        "description": "Try out some easy questions. Get a feel for how this website works.",
+        "music": "../src/audio/bgm/chill.mp3",
+        "apiParams": {
+            "categories": ["general_knowledge"],
+            "difficulties": ["easy"],
+            "limit": 10
+        }
+    }
+]
