@@ -10,7 +10,7 @@ const QuizPage = ({ data }) => {
 
     return (
         <Layout>
-            <QuizGame data={quiz} />
+            <QuizGame quiz={quiz} />
         </Layout>
     );
 };
@@ -20,6 +20,8 @@ export const query = graphql`
         quiz(slug: { eq: $slug }) {
             quizId
             name
+            difficulty
+            description
             questions {
                 category
                 text

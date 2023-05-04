@@ -1,4 +1,55 @@
-const { fetchExternalQuestions } = require("./src/utils");
+require("dotenv").config();
+
+const EleventyFetch = require("@11ty/eleventy-fetch");
+
+// REQUEST CONSTANTS
+const BASE_URL = "https://the-trivia-api.com/v2/questions";
+const BASE_HEADERS = {
+    "Accept": "application/json",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+};
+const CACHE_DIRECTORY = ".11ty-cache";
+const CACHE_DURATION = "1d";
+
+const fetchExternalQuestions = async function ({ categories, difficulties, limit }) {
+    const params = new URLSearchParams({
+        categories: categories.join(','),
+        difficulties: difficulties.join(','),
+        limit
+    });
+
+    const queryString = params.toString();
+    const requestUrl = `${BASE_URL}?${queryString}`;
+
+    let questionData = await EleventyFetch(requestUrl, {
+        directory: CACHE_DIRECTORY,
+        duration: CACHE_DURATION,
+        type: "json",
+        fetchOptions: {
+            method: "GET",
+            headers: BASE_HEADERS
+        }
+    });
+
+    questionData = questionData.map(item => {
+        const { category, question: {text}, correctAnswer, incorrectAnswers, isNiche } = item;
+
+        let answers = [
+            ...incorrectAnswers.map(text => ({ text, isCorrect: false })),
+            { text: correctAnswer, isCorrect: true }
+        ];
+        
+        return {
+            category,
+            text,
+            answers,
+            isNiche
+        };
+    });
+
+    return questionData;
+};
+
 
 
 exports.onCreateNode = async ({ actions, node, createNodeId, createContentDigest }) => {
@@ -8,7 +59,7 @@ exports.onCreateNode = async ({ actions, node, createNodeId, createContentDigest
 
     const { createNode } = actions;
 
-    const { quizId, name, slug, difficulty, apiParams } = node;
+    const { quizId, name, description, slug, difficulty, apiParams } = node;
 
     let questions = await fetchExternalQuestions(apiParams);
 
@@ -16,6 +67,7 @@ exports.onCreateNode = async ({ actions, node, createNodeId, createContentDigest
         id: createNodeId(`quiz-${quizId}`),
         quizId,
         name,
+        description,
         slug,
         difficulty,
         questions,

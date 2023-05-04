@@ -1,35 +1,41 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
-import sfxBeep from "../../audio/sfx/menu-select.wav";
-import sfxConfirm from "../../audio/sfx/menu-confirm.wav";
+import SfxPlayer from '../../sfx-player';
 
 import TitleView from './title-view';
-import QuestionView from './question-view';
+import PlayView from './play-view';
 import ResultsView from './results-view';
-import useSound from 'use-sound';
 
 
-const QuizGame = ({ data }) => {
 
-    useEffect(() => {
-        console.log("START");
-        playBeep();
+const QuizGame = ({ quiz }) => {
 
-    }, []);
-
+    const sfxPlayer = new SfxPlayer();
 
     const [currentPage, setCurrentPage] = useState('title');
-
-    const [playBeep] = useSound(sfxBeep);
-    console.log(sfxBeep);
+    const [score, setScore] = useState(0);
 
 
+    const viewComponents = {
+        'title': TitleView,
+        'play': PlayView,
+        'resutls': ResultsView
+    };
+
+    const viewProps = {
+        quiz,
+        setCurrentPage,
+        score,
+        setScore,
+        sfxPlayer
+    };
+
+
+    const View = viewComponents[currentPage];
 
     return (
         <div>
-            {currentPage === 'title' && <TitleView data={data} setCurrentPage={setCurrentPage} />}
-            {currentPage === 'play' && <QuestionView data={data} setCurrentPage={setCurrentPage} />}
-            {currentPage === 'results' && <ResultsView data={data} setCurrentPage={setCurrentPage} />}
+            <View {...viewProps} />
         </div>
     );
 };
