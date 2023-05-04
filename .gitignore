@@ -2,5 +2,7 @@ node_modules/
 .cache/
 .11ty-cache/
 public
-
 .env
+
+# Local Netlify folder
+.netlify

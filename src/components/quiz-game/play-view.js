@@ -6,7 +6,7 @@ const STATE_QUESTION = "showQuestion";
 const STATE_ANSWER = "answeredQuestion";
 
 
-const PlayView = ({ quiz, setCurrentPage, score, setScore }) => {
+const PlayView = ({ quiz, setCurrentView, score, setScore }) => {
     const { name, questions, length } = quiz;
 
     const [state, setState] = useState(STATE_QUESTION);
@@ -20,7 +20,7 @@ const PlayView = ({ quiz, setCurrentPage, score, setScore }) => {
         if ((currentIndex + 1) < length) {
             setCurrentIndex(value => value + 1);
         } else {
-            setCurrentPage("results");
+            setCurrentView("results");
         }
     }
 
@@ -90,8 +90,6 @@ const QuestionCard = ({ question, onClickAnswerButton }) => {
             <div>
                 {question.text}
                 <br />
-
-
                 <div>{answerButtons}</div>
             </div>
         </div>
@@ -101,7 +99,7 @@ const QuestionCard = ({ question, onClickAnswerButton }) => {
 const AnswerOverlay = ({ currentAnswer, allAnswers, onClick }) => {
 
     let correctAnswer = allAnswers.filter(a => a.isCorrect)[0];
-    let text = currentAnswer?.isCorrect ? <div>CORRECT</div> : <div>WRONG <p>{correctAnswer.text}</p></div>;
+    let text = currentAnswer?.isCorrect ? <div>CORRECT</div> : <div>WRONG <p>The correct answer is <b>{correctAnswer.text}</b></p></div>;
 
     return (
         <div onClick={onClick}>

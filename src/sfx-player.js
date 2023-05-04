@@ -12,7 +12,7 @@ const sfxResources = {
     'menu-select': sfxBeep,
     'menu-confirm': sfxConfirm,
     'answer-correct': sfxCorrect,
-    'answer-correct': sfxWrong,
+    'answer-wrong': sfxWrong,
     'applause': sfxApplause,
 };
 
@@ -37,7 +37,13 @@ export default class SfxPlayer {
 
     play(id="") {
         if (id in this.sfxList) {
-            this.sfxList[id].play();
+            const sound = this.sfxList[id];
+
+            if (sound.playing()) {
+                sound.stop();
+            }
+            
+            sound.play();
         }
     }
 }
