@@ -59,7 +59,7 @@ exports.onCreateNode = async ({ actions, node, createNodeId, createContentDigest
 
     const { createNode } = actions;
 
-    const { quizId, name, description, slug, difficulty, apiParams } = node;
+    const { quizId, name, description, slug, difficulty, music, apiParams } = node;
 
     let questions = await fetchExternalQuestions(apiParams);
 
@@ -72,6 +72,8 @@ exports.onCreateNode = async ({ actions, node, createNodeId, createContentDigest
         difficulty,
         questions,
         length: questions.length,
+
+        music,
 
         parent: node.id,
         children: [],

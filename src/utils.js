@@ -33,7 +33,7 @@ const grades = [
     {
         letter: "A",
         minAverage: 90,
-        message: "Excellent work. A near-perfect run. Have a round of spplause.",
+        message: "Excellent work. A near-perfect run. Have a round of applause.",
         confettiNumber: 250,
         color: "#ffee00",
         playApplause: true,
@@ -92,4 +92,6 @@ export const getGradeFromNumber = function (value) {
             return grade;
         }
     }
+
+    return grades.slice(-1);
 };

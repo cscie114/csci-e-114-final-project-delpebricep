@@ -39,10 +39,6 @@ const Layout = ({ pageTitle, children }) => {
 
             {/* MAIN PAGE BODY AND FOOTER */}
             <main>
-
-                {/* If a page title is not null, render it. Otherwise, just put a blank space. */}
-                {pageTitle ? <h2>{pageTitle}</h2> : ""}
-
                 {/* Render the component's children. */}
                 {children}
             </main>

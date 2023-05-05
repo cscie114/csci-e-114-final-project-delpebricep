@@ -1,19 +1,20 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
-import SfxPlayer from '../../sfx-player';
+import "./quiz-game.css";
 
-import TitleView from './title-view';
-import PlayView from './play-view';
-import ResultsView from './results-view';
-import HighScoreView from './high-score-view';
+import TitleView from './views/title-view';
+import PlayView from './views/play-view';
+import ResultsView from './views/results-view';
+import HighScoreView from './views/high-score-view';
 
+import SFXPlayer from '../../sfx-player';
 
 
 const QuizGame = ({ quiz }) => {
     
+    const sfxPlayer = new SFXPlayer();
     const [currentView, setCurrentView] = useState('title');    
     const [score, setScore] = useState(0);
-    const sfxPlayer = new SfxPlayer();
 
     const viewComponents = {
         'title': TitleView,
@@ -34,7 +35,7 @@ const QuizGame = ({ quiz }) => {
     const View = viewComponents[currentView];
 
     return (
-        <div>
+        <div className="quiz-container">
             <View {...viewProps} />
         </div>
     );

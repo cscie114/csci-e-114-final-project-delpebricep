@@ -32,12 +32,15 @@ export const query = graphql`
                 isNiche
             }
             length
+            music {
+                publicURL
+            }
         }
     }
 `;
 
 export const Head = ({ data }) => {
-    return <title>Quiz: {data.quiz.name}</title>;
+    return <title>{data.quiz.name}</title>;
 };
 
 export default QuizPage;
