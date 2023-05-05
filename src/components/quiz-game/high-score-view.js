@@ -11,7 +11,7 @@ const HighScoreView = ({ quiz, setCurrentView }) => {
     const [scores, setScores] = useState([]);
 
     async function getScoreData() {
-        const response = await fetch(`/.netlify/functions/quiz-get-scores?quizId=${quizId}`);
+        const response = await fetch(`/.netlify/functions/quiz-scores?quizId=${quizId}`, { method: "GET" });
         const data = await response.json();
 
         setScores(data);

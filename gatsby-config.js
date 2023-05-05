@@ -7,7 +7,7 @@ module.exports = {
 		description: "Partake in a selection of trivia quizzes and test your knowledge.",
 		author: "Pascal Delpe-Brice",
 		info: "Final Project for CSCI E-114: Web Application Development With Jamstack",
-		siteUrl: "https://quizland.netlify.app",
+		siteUrl: "https://gatsby-quiz-land.netlify.app/",
 	},
 	plugins: [
 		`gatsby-plugin-image`,

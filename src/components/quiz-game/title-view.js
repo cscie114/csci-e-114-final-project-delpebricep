@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 
-const TitleView = ({ quiz, setCurrentView }) => {
+const TitleView = ({ quiz, setCurrentView, setScore }) => {
     const { name, description, difficulty, length } = quiz;
 
 

@@ -10,12 +10,10 @@ import HighScoreView from './high-score-view';
 
 
 const QuizGame = ({ quiz }) => {
-
-    const sfxPlayer = new SfxPlayer();
-
-    const [currentView, setCurrentView] = useState('title');
+    
+    const [currentView, setCurrentView] = useState('title');    
     const [score, setScore] = useState(0);
-
+    const sfxPlayer = new SfxPlayer();
 
     const viewComponents = {
         'title': TitleView,

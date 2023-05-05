@@ -1,12 +1,19 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { shuffle } from '../../utils';
-
+import { Howl } from 'howler';
+// Howl
 
 const STATE_QUESTION = "showQuestion";
 const STATE_ANSWER = "answeredQuestion";
 
 
-const PlayView = ({ quiz, setCurrentView, score, setScore }) => {
+const PlayView = ({ quiz, setCurrentView, score, setScore, sfxPlayer }) => {
+    // const music = new Howl({
+    //     src: [url]
+    // });
+
+    // music.play();
+
     const { name, questions, length } = quiz;
 
     const [state, setState] = useState(STATE_QUESTION);
