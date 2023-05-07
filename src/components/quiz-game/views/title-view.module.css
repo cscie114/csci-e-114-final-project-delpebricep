@@ -1,0 +1,61 @@
+.title-view {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.title-view p {
+    margin: 0px;
+}
+
+.title-logo {
+    margin-bottom: 16px;
+}
+
+.title-logo p {
+    margin-bottom: 2px;
+    font-style: italic;
+}
+
+.title-logo h1 {
+    color: black;
+    font-family: "Arial";
+    font-size: 2.25em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.statbox-row {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    gap: 8px;
+}
+
+.statbox {
+    flex: 1;
+    background: #bae6ff;
+    padding: 8px;
+}
+
+.statbox__heading {
+    margin-bottom: 8px;
+    margin-top: 0px;
+    font-size: 120%;
+}
+
+.statbox__text {
+    margin: 0px
+}
+
+.statbox__big-text {
+    margin: 0px;
+    font-size: 170%;
+    font-weight: bold;
+}
+
+.copyright-text {
+    font-size: 0.75em;
+}

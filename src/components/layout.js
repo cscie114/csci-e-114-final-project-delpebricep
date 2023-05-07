@@ -7,7 +7,7 @@ import * as styles from "./layout.module.css";
 
 
 // This component is the site's layout. Used on every page.
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
 
     return (
         <div>

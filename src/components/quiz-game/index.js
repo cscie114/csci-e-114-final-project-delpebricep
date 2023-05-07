@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState } from 'react';
 
 import "./quiz-game.css";
 
 import TitleView from './views/title-view';
 import PlayView from './views/play-view';
 import ResultsView from './views/results-view';
-import HighScoreView from './views/high-score-view';
+import LeaderboardView from './views/leaderboard-view';
 
 import SFXPlayer from '../../sfx-player';
 
@@ -20,7 +20,7 @@ const QuizGame = ({ quiz }) => {
         'title': TitleView,
         'play': PlayView,
         'results': ResultsView,
-        'high-scores': HighScoreView
+        'leaderboard': LeaderboardView
     };
 
     const viewProps = {

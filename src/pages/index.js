@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
     });
 
     return (
-        <Layout pageTitle={null}>
+        <Layout>
             <div style={{ textAlign: "center" }}>
                 <h2>TEST. YOUR. KNOWLEDGE.</h2>
 

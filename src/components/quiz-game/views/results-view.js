@@ -116,7 +116,7 @@ const ResultsView = ({ quiz, score, setCurrentView, sfxPlayer }) => {
             {gradeDisplay}
 
             <button onClick={() => setCurrentView('play')}>Play Again</button>
-            <button onClick={() => setCurrentView('high-scores')}>High Scores</button>
+            <button onClick={() => setCurrentView('leaderboard')}>High Scores</button>
             <button onClick={() => setCurrentView('title')}>Quit</button>
         </div>
     );

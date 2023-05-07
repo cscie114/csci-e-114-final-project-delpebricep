@@ -1,48 +1,58 @@
-import React, { useState, useEffect } from 'react';
+/*
+    TITLE VIEW COMPONENT
+    This component represents the quiz game's title screen.
+    Displays the quiz's name, length, and other such information.
+*/
+
+
+import React from 'react';
 import Button from '../common/button';
 
-// Button
+import * as styles from "./title-view.module.css";
 
-const TitleView = ({ quiz, setCurrentView, setScore }) => {
+
+// Main component
+const TitleView = ({ quiz, setCurrentView }) => {
     const { name, description, difficulty, length } = quiz;
 
-
     return (
-        <div className="title-view">
-            <div className="title-logo">
-                <p className="title-logo__pretitle">Quiz Land presents</p>
-                <h1 className="title-logo__name">{name}</h1>
+        <div className={styles["titleView"]}>
+            {/* QUIZ TITLE */}
+            <div className={styles["titleLogo"]}>
+                <p>Quiz Land presents</p>
+                <h1>{name}</h1>
             </div>
 
-            <div className="statbox-row">
-                <div className="statbox">
-                    <h2 className="statbox__heading">Quiz Description</h2>
-                    <p className="statbox__text" dangerouslySetInnerHTML={{__html: description}}></p>
+            {/* QUIZ DESCRIPTION/INFO */}
+            <div className={styles["statboxRow"]}>
+                <div className={styles["statbox"]}>
+                    <h2 className={styles["statbox__heading"]}>Quiz Description</h2>
+                    <p className={styles["statbox__text"]} dangerouslySetInnerHTML={{__html: description}}></p>
                 </div>
             </div>
 
-
-            <div className="statbox-row">
-                <div className="statbox">
-                    <h2 className="statbox__heading">Difficulty</h2>
-                    <p className="statbox__big-text">{difficulty}</p>
+            <div className={styles["statboxRow"]}>
+                <div className={styles["statbox"]}>
+                    <h2 className={styles["statbox__heading"]}>Difficulty</h2>
+                    <p className={styles["statbox__bigText"]}>{difficulty}</p>
                 </div>
 
-                <div className="statbox">
-                    <h2 className="statbox__heading">Total Questions</h2>
-                    <p className="statbox__big-text">{length}</p>
+                <div className={styles["statbox"]}>
+                    <h2 className={styles["statbox__heading"]}>Total Questions</h2>
+                    <p className={styles["statbox__bigText"]}>{length}</p>
                 </div>
             </div>
 
+            {/* BUTTONS TO GO TO OTHER SCREENS */}
             <div className="button-container">
                 <Button onClick={() => setCurrentView('play')}>Play</Button>
-                <Button onClick={() => setCurrentView('high-scores')}>High Scores</Button>
+                <Button onClick={() => setCurrentView('leaderboard')}>Leaderboard</Button>
             </div>
 
-            <p className="copyright-text">Game &copy;2023 QuizLand, Inc. | Questions from The Trivia API</p>
+            {/* COPYRIGHT TEXT */}
+            <p className={styles["copyrightText"]}>Game &copy;2023 QuizLand, Inc. | Questions from The Trivia API</p>
         </div>
     )
 };
-
 
 export default TitleView;

@@ -45,7 +45,7 @@ const handler = async (event) => {
             const { quizId, name, score } = JSON.parse(event.body);
             return postScore(database, { quizId, name, score })
         } else {
-            return { statusCode: 405 };
+            return { statusCode: 405, body: "This method is not allowed." };
         }
     } catch (error) {
         return { statusCode: 500, body: error.toString() }
