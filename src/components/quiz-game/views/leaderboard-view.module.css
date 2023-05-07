@@ -1,29 +1,47 @@
-.leaderboard-view {
-    text-align: center;
+/* MAIN CONTAINER */
+.container {
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    gap: 12px;
     height: 100%;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.leaderboard-title h2 {
+/* TITLE AND CONTENT */
+.title {
+    width: 96%;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.title h2 {
+    margin-top: 0px;
+    margin-bottom: 8px;
+
+}
+
+.title h3 {
+    font-weight: normal;
     margin-top: 0px;
     margin-bottom: 4px;
 }
 
-.leaderboard-title h3 {
-    font-weight: normal;
-    margin-top: 0px;
-    margin-bottom: 8px;
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex: 1;
 }
 
-.leaderboard-content {
-    flex: 1;
-
+.center-container {
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 
@@ -45,4 +63,49 @@
 
 .error-box p {
     margin: 0px;
+}
+
+
+.table-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 80%;
+}
+
+.table th {
+    position: sticky;
+        top: 0;
+}
+
+
+.table td,
+.table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.table thead {
+    position: sticky;
+    inset-block-start: 0;
 }

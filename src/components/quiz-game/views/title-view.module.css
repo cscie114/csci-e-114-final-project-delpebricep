@@ -1,4 +1,4 @@
-.title-view {
+.container {
     text-align: center;
     display: flex;
     flex-flow: column;
@@ -6,20 +6,20 @@
     height: 100%;
 }
 
-.title-view p {
+.container p {
     margin: 0px;
 }
 
-.title-logo {
+.title {
     margin-bottom: 16px;
 }
 
-.title-logo p {
+.title p {
     margin-bottom: 2px;
     font-style: italic;
 }
 
-.title-logo h1 {
+.title h1 {
     color: black;
     font-family: "Arial";
     font-size: 2.25em;
@@ -40,17 +40,17 @@
     padding: 8px;
 }
 
-.statbox__heading {
+.statbox h2 {
     margin-bottom: 8px;
     margin-top: 0px;
     font-size: 120%;
 }
 
-.statbox__text {
+.statbox p {
     margin: 0px
 }
 
-.statbox__big-text {
+.statbox .big-text {
     margin: 0px;
     font-size: 170%;
     font-weight: bold;

@@ -1,0 +1,146 @@
+/* MAIN CONTAINER */
+.container {
+    display: flex;
+    flex-flow: column;
+    gap: 12px;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* TITLE AND CONTENT */
+.title {
+    width: 96%;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.title h2 {
+    margin-top: 0px;
+    margin-bottom: 8px;
+
+}
+
+.title h3 {
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex: 1;
+}
+
+.row {
+    display: flex;
+    flex-flow: row;
+    gap: 16px;
+    width: 80%;
+}
+
+/* RESULT STATS */
+.stat-container {
+    flex: 1;
+}
+.stat {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.stat .stat-label, 
+.stat .stat-value {
+    font-weight: bold;
+}
+
+.stat .stat-label {
+    font-size: medium;
+}
+
+.stat .stat-value {    
+    font-size: larger;
+}
+
+/* GRADE */
+.grade-container {
+    flex: 2.75;
+}
+
+.grade {
+    text-align: center;
+    flex: 1;
+}
+
+.grade .label {
+    font-weight: bold;
+    font-size: 130%;
+}
+
+.grade .letter {
+    font-weight: bolder;
+    margin: 0px;
+    font-size: 7em;
+    text-shadow: 5px 5px black;
+    -webkit-text-stroke: 1px black;
+}
+
+.grade-message {
+    font-style: italic;
+    font-size: 0.8em;
+    margin: 0px;
+}
+
+/* SUBMIT FORM */
+.form-area {
+    background: #ffeebe;
+    border-radius: 2px;
+    padding: 16px;
+    text-align: center;
+    width: 64%;
+    flex: 1;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-area fieldset {
+    display: contents;
+}
+
+.form-area h4 {
+    margin-top: 0px;
+    margin-bottom: 6px;
+}
+
+.form-area form {
+    display: flex;
+    flex-flow: row;
+    gap: 8px;
+    align-items: center;
+    flex: 1;
+}
+
+.form-area .form-button {
+    font-size: 16px;
+    padding: 4px;
+    flex: 1;
+}
+
+.form-area input {
+    padding: 0px;
+    font-size: 16px;
+    flex: 2;
+}
+
+.form-area p {
+    margin-top: 8px;
+    margin-bottom: 0px;
+}

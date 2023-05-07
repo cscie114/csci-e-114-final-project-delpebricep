@@ -10,10 +10,10 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "start:netlify": "netlify dev",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "netlify:start": "netlify dev"
   },
   "dependencies": {
     "@11ty/eleventy-fetch": "^4.0.0",
