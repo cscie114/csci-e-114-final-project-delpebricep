@@ -37,6 +37,11 @@ After completing the previous two steps, run ```npm start``` to execute the proj
 I made use of Netlify's serverless functions to implement Quiz Land's leaderboard feature. The function allows users to query other players' high scores for a certain quiz, as well as submit their own scores. Player names and scores are stored in the MongoDB database.
 
 
+## Resource Credits
+
+I made use of a few internet resources to build certain parts of this website. They are all listed below.
+
+
 
 Resources
 
@@ -44,4 +49,6 @@ Resources
 	- freesound.org
 		- adriann
 		
+
+[MongoDB and Netlify Serverless Functions](https://www.mongodb.com/developer/languages/javascript/developing-web-application-netlify-serverless-functions-mongodb/)
 		

@@ -9,7 +9,10 @@
 
 // MongoDB setup
 const { MongoClient } = require("mongodb");
-const mongoClient = new MongoClient(process.env.MONGODB_URI);
+const mongoClient = new MongoClient(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 const clientPromise = mongoClient.connect();
 
 
