@@ -1,6 +1,5 @@
 import { Howl } from 'howler';
 
-
 import sfxCorrect from "./audio/sfx/answer-correct.wav";
 import sfxWrong from "./audio/sfx/answer-wrong.wav";
 import sfxApplause from "./audio/sfx/applause.wav";
@@ -12,6 +11,10 @@ import sfxFanfarePoor from "./audio/sfx/fanfare-poor.wav";
 import sfxFanfarePerfect from "./audio/sfx/fanfare-perfect.wav";
 
 
+/*
+    A quick utility class to allow for playing sound effects
+    without having to make Howl instances all of the time.
+*/
 export default class SFXPlayer {
     constructor() {
         const assets = {
@@ -28,6 +31,7 @@ export default class SFXPlayer {
 
         this.sfxList = {};
 
+        // Gather each imported SFX asset and create Howl objects for each.
         for (const key in assets) {
             let sound = assets[key];
 
@@ -37,7 +41,7 @@ export default class SFXPlayer {
         }
     }
 
-
+    // Plays a sound with a given id.
     play(id) {
         if (!(id in this.sfxList)) {
             return;
@@ -54,6 +58,7 @@ export default class SFXPlayer {
         return sound;
     }
 
+    // Plays a sound with a given id and resolves a promise when it's done.
     async playAsync(id) {
         let sound = this.play(id);
 
@@ -65,4 +70,12 @@ export default class SFXPlayer {
             sound.play();
         });
     }
-};
+
+    // Destroys every sound, freeing them from the cache.
+    cleanup() {
+        for (const key in this.sfxList) {
+            const sound = this.sfxList[key];
+            sound.unload();
+        }
+    }
+}

@@ -69,11 +69,6 @@
 
 
 /* TABLE */
-.table-container {
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
 .table {
     width: 100%;
     border-collapse: collapse;

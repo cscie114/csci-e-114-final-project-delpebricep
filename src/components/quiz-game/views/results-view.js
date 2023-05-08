@@ -141,7 +141,7 @@ const ResultsView = ({ quiz, score, setCurrentView, sfxPlayer }) => {
                 {isGradeVisible && <p className={styles.gradeMessage}>{grade.message}</p>}
 
                 {/* LEADERBOARD SUBMISSION FORM */}
-                {canSubmit && <SubmitForm quizId={quizId} score={score} gradeData={grade} />}
+                {canSubmit && <SubmitForm quizId={quizId} score={score} gradeData={grade} percentage={gradePercentage} />}
             </div>
 
             {/* BUTTONS TO GO TO OTHER SCREENS */}
@@ -170,7 +170,7 @@ const GradeLetter = ({ gradeData }) => {
 
 
 // This component is a form that the user fills to submit their score.
-const SubmitForm = ({ quizId, score, gradeData }) => {
+const SubmitForm = ({ quizId, score, gradeData, percentage }) => {
     const { letter } = gradeData;
 
     // Finite states to control the form
@@ -196,6 +196,7 @@ const SubmitForm = ({ quizId, score, gradeData }) => {
         formData.set("quizId", quizId);
         formData.set("score", score);
         formData.set("grade", letter);
+        formData.set("percentage", percentage);
 
         // Make form data a string
         const stringData = JSON.stringify(Object.fromEntries(formData));
@@ -238,19 +239,24 @@ const SubmitForm = ({ quizId, score, gradeData }) => {
         <div className={styles.formArea}>
             <h4>Submit Your Score</h4>
 
-            <form method="POST" onSubmit={handleSubmit}>
-                {/* Disable these controls if form is submitting or successful */}
-                <fieldset disabled={state === STATE_SUCCESS || state === STATE_SUBMITTING}>
-                    <label htmlFor="input-name">
-                        Name:
-                    </label>
-                    <input id="input-name" type="text" name="name" />
+            {/* The form itself, which only appears if the player hasn't submitted anything */}
+            {
+                state !== STATE_SUCCESS && (
+                    <form method="POST" onSubmit={handleSubmit}>
+                        {/* Disable these controls if form is submitting */}
+                        <fieldset disabled={state === STATE_SUBMITTING}>
+                            <label htmlFor="input-name">
+                                Name:
+                            </label>
+                            <input id="input-name" type="text" name="name" />
 
-                    <Button type="submit" classes={[styles.formButton]}>
-                        {state === STATE_SUBMITTING ? "Submitting..." : "Submit"}
-                    </Button>
-                </fieldset>
-            </form>
+                            <Button type="submit" classes={[styles.formButton]}>
+                                {state === STATE_SUBMITTING ? "Submitting..." : "Submit"}
+                            </Button>
+                        </fieldset>
+                    </form>
+                )
+            }
 
             <p>{formText}</p>
         </div>

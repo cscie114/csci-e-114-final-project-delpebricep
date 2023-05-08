@@ -44,14 +44,15 @@ async function getScores(database, { quizId, limit = DEFAULT_LIMIT }) {
     Given a quiz ID, name, score, and letter, 
     this function posts the latter three as to that quiz's leaderboard.
 */
-async function postScore(database, { quizId, name, score, grade }) {
+async function postScore(database, { quizId, name, score, grade, percentage }) {
     // Insert a new record to the database.
     const collection = database.collection(process.env.MONGODB_COLLECTION);
     const result = await collection.insertOne({
         quizId: parseInt(quizId),
         name,
         score: parseInt(score),
-        grade
+        grade,
+        percentage
     });
 
     // No name? Return an error.
@@ -85,8 +86,8 @@ const handler = async (event) => {
         
         // If it's a POST, we're posting a new record.
         if (httpMethod === "POST") {
-            const { quizId, name, score, grade } = JSON.parse(event.body);
-            return postScore(database, { quizId, name, score, grade })
+            const { quizId, name, score, grade, percentage } = JSON.parse(event.body);
+            return postScore(database, { quizId, name, score, grade, percentage })
         }
         
         // PATCH, PUT, and DELETE are not allowed.
