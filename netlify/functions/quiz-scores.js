@@ -11,7 +11,7 @@
 const { MongoClient } = require("mongodb");
 const mongoClient = new MongoClient(process.env.MONGODB_URI);
 const clientPromise = mongoClient.connect();
-mongoClient.close();
+
 
 // Default number of scores to return
 const DEFAULT_LIMIT = 20;

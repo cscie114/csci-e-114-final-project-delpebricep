@@ -94,7 +94,7 @@ const ResultsView = ({ quiz, score, setCurrentView, sfxPlayer }) => {
             // Clean up the confetti
             jsConfetti.clearCanvas();
         };
-    }, [grade, gradePercentage, sfxPlayer]);
+    }, [grade, gradePercentage]);
     
 
     // Build the whole element
