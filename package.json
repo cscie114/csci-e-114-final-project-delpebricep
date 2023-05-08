@@ -13,7 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "netlify:start": "netlify dev"
+    "lint": "eslint --ext js,jsx src",
+    "start:netlify": "netlify dev"
   },
   "dependencies": {
     "@11ty/eleventy-fetch": "^4.0.0",
