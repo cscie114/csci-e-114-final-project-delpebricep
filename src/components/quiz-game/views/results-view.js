@@ -161,7 +161,7 @@ const GradeLetter = ({ gradeData }) => {
 
     return (
         <div>
-            <span class={styles.letter} style={{ color: color }}>
+            <span className={styles.letter} style={{ color: color }}>
                 {letter}
             </span>
         </div>

@@ -2,12 +2,16 @@
     NETLIFY SERVERLESS FUNCTIONS
     These handle submitting and querying leaderboards for each quiz.
     Score information is stored on a MongoDB database.
+
+    This was accomplished using the following MongoDB guide:
+    https://www.mongodb.com/developer/languages/javascript/developing-web-application-netlify-serverless-functions-mongodb/
 */
 
 // MongoDB setup
 const { MongoClient } = require("mongodb");
 const mongoClient = new MongoClient(process.env.MONGODB_URI);
 const clientPromise = mongoClient.connect();
+mongoClient.close();
 
 // Default number of scores to return
 const DEFAULT_LIMIT = 20;

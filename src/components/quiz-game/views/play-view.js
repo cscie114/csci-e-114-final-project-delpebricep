@@ -15,6 +15,11 @@ import { shuffle } from '../../../utils';
 const PlayView = ({ quiz, setCurrentView, score, setScore, sfxPlayer }) => {
     const { questions, music } = quiz;
 
+    // Reset score to 0 at the start.
+    useEffect(() => {
+        setScore(0);
+    }, [setScore]);
+
     // Background music controller.
     // Runs only if the quiz's music track is changed.
     useEffect(() => {
@@ -32,7 +37,6 @@ const PlayView = ({ quiz, setCurrentView, score, setScore, sfxPlayer }) => {
             bgmTrack.unload();
         };
     }, [music.publicURL]);
-
 
     function onAnswerSelected(answer) {
         if (answer.isCorrect) {

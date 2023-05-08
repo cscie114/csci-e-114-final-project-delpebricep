@@ -27,13 +27,14 @@
     margin-bottom: 4px;
 }
 
-
 .content {
     width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
     flex: 1;
+    overflow-y: scroll;
+    text-align: center;
 }
 
 .center-container {
@@ -44,12 +45,12 @@
     height: 100%;
 }
 
-
+/* ERROR BOX */
 .error-box { 
     padding: 12px;
     background: #08489c;
     color: white;
-    width: 75%;
+    width: 100%;
     border-radius: 8px;
     font-size: small;
 }
@@ -66,6 +67,7 @@
 }
 
 
+/* TABLE */
 .table-container {
     overflow-x: hidden;
     overflow-y: auto;
@@ -75,37 +77,33 @@
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    font-size: 80%;
+    font-size: 90%;
+    text-align: center;
+    background: #fae5c1;
 }
 
-.table th {
-    position: sticky;
-        top: 0;
-}
-
-
-.table td,
-.table th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.table tr:hover {
-    background-color: #ddd;
-}
-
-.table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: #04AA6D;
-    color: white;
-}
 
 .table thead {
     position: sticky;
     inset-block-start: 0;
 }
+
+.table td,
+.table th {
+    border: 2px solid #111111;
+    padding: 8px;
+}
+
+.table th {
+    background: #2d4e69;
+    padding: 8px;
+    color: white;
+}
+.table tr:nth-child(even) {
+    background: #f2ffe3;
+}
+
+.table tr:hover {
+    background: #cef5ff;
+}
+

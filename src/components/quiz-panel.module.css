@@ -1,0 +1,12 @@
+.container {
+    width: 240px;
+    /* height: 100px; */
+    background: white;
+    box-shadow: 8px 8px black;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.name {
+    margin: 0px;
+}

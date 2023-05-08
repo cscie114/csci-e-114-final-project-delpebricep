@@ -1,9 +1,11 @@
 .quiz-container {
-    background: burlywood;
+    background: #43aaff;
     width: 768px;
     height: 432px;  
     margin: 0 auto;
     padding: 16px;
+
+    font-family: 'Source Code Pro', monospace;
 }
 
 .button-container {

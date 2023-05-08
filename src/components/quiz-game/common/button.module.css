@@ -4,4 +4,10 @@
     padding: 16px;
     background-color: white;
     font-size: 16px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.button:hover {
+    cursor: pointer;
+    outline: 4px solid black;
 }

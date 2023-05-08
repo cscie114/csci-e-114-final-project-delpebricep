@@ -1,19 +1,24 @@
-import * as React from "react"
+import React from "react"
 import { Link, graphql } from "gatsby";
-import Layout from "../components/layout";
 import { StaticImage } from "gatsby-plugin-image";
 
+import Layout from "../components/layout";
+import QuizPanel from "../components/quiz-panel";
 
+import "../styles.css";
+
+
+// Home page
 const IndexPage = ({ data }) => {
 
     const quizList = data.allQuiz.nodes.map((quiz, i) => {
-        return <div key={i}><Link to={"/quiz/" + quiz.slug}>{quiz.name}</Link></div>;
+        return <QuizPanel key={i} quiz={quiz} />;
     });
 
     return (
         <Layout>
             <div style={{ textAlign: "center" }}>
-                <h2>TEST. YOUR. KNOWLEDGE.</h2>
+                <h2 style={{ marginTop: 0 }}>HOW MUCH DO YOU KNOW?</h2>
 
                 <StaticImage
                     src="../images/home_image.png"
@@ -24,12 +29,20 @@ const IndexPage = ({ data }) => {
                     alt="Home Image"
                 />
 
-                <p>Welcome to <b>Gatsby Quiz Land</b>. Take on a collection of quizzes and show how much you know about various topics.</p>
-                <p>Get started by selecting a quiz below.</p>
+                <p>
+                    Here at <b>Quiz Land</b>, take on a collection of API-generated quizzes and demonstrate your knowledge on about various topics.
+                    <br />
+                    Every quiz here is different. Some are a breeze. Others will give you a hard time.
+                    <br />
+                    Did exceptionally well and have a need to brag? Submit quiz scores to the leaderboards and compare your grades to other users on this site around the world.
+                </p>
+                <p>What are you waiting for? Choose a quiz below and get started.</p>
             </div>
 
+            <hr />
 
             <div>
+                <h2>QUIZZES</h2>
                 {quizList}
             </div>
 
@@ -37,6 +50,7 @@ const IndexPage = ({ data }) => {
     );
 };
 
+// Query every quiz in the database
 export const query = graphql`
     query {
         allQuiz {

@@ -67,6 +67,10 @@
     font-size: 12px;
 }
 
+.answer-button:hover {
+    outline: 4px solid yellow;
+}
+
 /* ANSWER RESULT OVERLAY */
 .answer-result {
     width: 100%;
@@ -94,6 +98,9 @@
     font-size: 16px;
     padding: 4px;
     width: 50%;
+    cursor: pointer;
 }
 
-
+.answer-result button:hover {
+    outline: 4px solid red;
+}
