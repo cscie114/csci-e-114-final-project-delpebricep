@@ -1,0 +1,18 @@
+{
+    "quizId": 3,
+    "date": "2023-03-03",
+    "name": "Intermediate Knowledge",
+    "slug": "intermediate-knowledge",
+    "difficulty": "Medium",
+    "description": "A selection of slightly more difficult general knowledge questions. Won't be too much trouble, but don't get complacent.",
+    "music": "../../src/audio/bgm/off-to-osaka.ogg",
+    "apiParams": {
+        "categories": [
+            "general_knowledge"
+        ],
+        "difficulties": [
+            "medium"
+        ],
+        "limit": 15
+    }
+}

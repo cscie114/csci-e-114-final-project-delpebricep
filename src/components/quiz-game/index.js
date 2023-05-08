@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Howler } from 'howler';
 
 import "./quiz-game.css";
 
@@ -34,10 +35,21 @@ const QuizGame = ({ quiz }) => {
 
     const View = viewComponents[currentView];
 
+    function onSliderChange(event) {
+        Howler.volume(event.target.value);
+    }
+
     return (
-        <div className="quiz-container">
-            <View {...viewProps} />
-        </div>
+        <>
+            <div className="quiz-container">
+                <View {...viewProps} />
+            </div>
+            <div className="sound-controls">
+                <h3>Sound Controls</h3>
+
+                <input type="range" min={0} max={1} step={0.01} onInput={onSliderChange} />
+            </div>
+        </>
     );
 };
 

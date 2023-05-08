@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+.footer p {
+    padding: 8px;
+}
+
 .footer a {
     color: white;
 }

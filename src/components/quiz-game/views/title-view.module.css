@@ -4,6 +4,7 @@
     flex-flow: column;
     justify-content: space-between;
     height: 100%;
+    user-select: none;
 }
 
 .container p {
@@ -35,7 +36,7 @@
 
 .statbox {
     flex: 1;
-    background: #bae6ff;
+    background: #fff67e;
     padding: 8px;
 }
 

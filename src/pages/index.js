@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { Link, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -11,14 +11,14 @@ import "../styles.css";
 // Home page
 const IndexPage = ({ data }) => {
 
-    const quizList = data.allQuiz.nodes.map((quiz, i) => {
+    const quizPanels = data.allQuiz.nodes.map((quiz, i) => {
         return <QuizPanel key={i} quiz={quiz} />;
     });
 
     return (
         <Layout>
             <div style={{ textAlign: "center" }}>
-                <h2 style={{ marginTop: 0 }}>HOW MUCH DO YOU KNOW?</h2>
+                <h1 style={{ marginTop: 0 }}>HOW MUCH DO YOU KNOW?</h1>
 
                 <StaticImage
                     src="../images/home_image.png"
@@ -29,34 +29,40 @@ const IndexPage = ({ data }) => {
                     alt="Home Image"
                 />
 
-                <p>
+                <p style={{ marginBottom: 8 }}>
                     Here at <b>Quiz Land</b>, take on a collection of API-generated quizzes and demonstrate your knowledge on about various topics.
-                    <br />
-                    Every quiz here is different. Some are a breeze. Others will give you a hard time.
                     <br />
                     Did exceptionally well and have a need to brag? Submit quiz scores to the leaderboards and compare your grades to other users on this site around the world.
                 </p>
-                <p>What are you waiting for? Choose a quiz below and get started.</p>
+
+                <p style={{ marginBottom: 8 }}>
+                    Want to get started? <Link to="/quiz/">Browse our collection of quizzes</Link> or choose a newly-added quiz below.
+                </p>
             </div>
 
             <hr />
 
-            <div>
-                <h2>QUIZZES</h2>
-                {quizList}
-            </div>
+            <div style={{ marginBottom: 32 }}>
+                <h2 style={{ textAlign: "center" }}>THE LATEST QUIZZES</h2>
+                <div className="quiz-panels">
+                    {quizPanels}
+                </div>
 
+                <Link to="/quiz/" className="more-button">More Quizzes</Link>
+            </div>
         </Layout>
     );
 };
 
-// Query every quiz in the database
+// Query the four most recent quizzes in the database.
+// Recent as in ordered by date, descending
 export const query = graphql`
     query {
-        allQuiz {
+        allQuiz(sort: {date: DESC}, limit: 4) {
             nodes {
                 quizId
                 name
+                date
                 slug
                 difficulty
                 length

@@ -1,0 +1,18 @@
+{
+    "quizId": 5,
+    "date": "2023-03-03",
+    "name": "Expert Knowledge DX",
+    "slug": "expert-knowledge-dx",
+    "difficulty": "Super",
+    "description": "A rather lengthy quiz full of difficult general knowledge questions. Can you get an A on this one?",
+    "music": "../../src/audio/bgm/ramblin-gramblin.ogg",
+    "apiParams": {
+        "categories": [
+            "general_knowledge"
+        ],
+        "difficulties": [
+            "hard"
+        ],
+        "limit": 30
+    }
+}

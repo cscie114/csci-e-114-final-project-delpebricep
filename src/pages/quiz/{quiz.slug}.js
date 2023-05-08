@@ -5,6 +5,7 @@ import Layout from "../../components/layout";
 import QuizGame from "../../components/quiz-game/";
 
 
+// A quiz's individual page
 const QuizPage = ({ data }) => {
     const { quiz } = data;
 
@@ -15,6 +16,7 @@ const QuizPage = ({ data }) => {
     );
 };
 
+// Query for the quiz via its slug in the URL
 export const query = graphql`
     query($slug: String!) {
         quiz(slug: { eq: $slug }) {
@@ -23,7 +25,10 @@ export const query = graphql`
             difficulty
             description
             questions {
-                category
+                category {
+                    categoryId
+                    name
+                }
                 text
                 answers {
                     text

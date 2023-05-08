@@ -1,0 +1,19 @@
+{
+    "quizId": 50,
+    "date": "2023-03-03",
+    "name": "An Appetizing Course",
+    "slug": "appetizing-course",
+    "difficulty": "Easy",
+    "description": "An easy quiz all about food and drink. Not recommended on an empty stomach.",
+    "music": "../../src/audio/bgm/off-to-osaka.ogg",
+    "apiParams": {
+        "categories": [
+            "food_and_drink"
+        ],
+        "difficulties": [
+            "easy",
+            "medium"
+        ],
+        "limit": 20
+    }
+}

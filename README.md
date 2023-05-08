@@ -2,7 +2,7 @@
 
 This Gatsby website 
 
-**Project Site**: https://gatsby-quiz-land.netlify.app/
+**Project Site**: https://quiz-land.netlify.app/
 
 
 ## Application Setup

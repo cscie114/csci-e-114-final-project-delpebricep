@@ -1,0 +1,18 @@
+{
+    "quizId": 7,
+    "date": "2023-03-03",
+    "name": "Moviegoers Only",
+    "slug": "moviegoers-only",
+    "difficulty": "Medium",
+    "description": "Only the biggest consumers of film and TV can get a high score on this quiz.",
+    "music": "../../src/audio/bgm/carnival-time.mp3",
+    "apiParams": {
+        "categories": [
+            "film_and_tv"
+        ],
+        "difficulties": [
+            "medium"
+        ],
+        "limit": 25
+    }
+}

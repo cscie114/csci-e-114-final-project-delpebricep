@@ -1,0 +1,18 @@
+{
+    "quizId": 20,
+    "date": "2023-03-03",
+    "name": "History 101",
+    "slug": "history-101",
+    "difficulty": "Easy",
+    "description": "Test your knowledge on basic history facts.",
+    "music": "../../src/audio/bgm/bowler-hats.ogg",
+    "apiParams": {
+        "categories": [
+            "history"
+        ],
+        "difficulties": [
+            "easy"
+        ],
+        "limit": 15
+    }
+}

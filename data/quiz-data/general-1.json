@@ -1,0 +1,18 @@
+{
+    "quizId": 2,
+    "date": "2023-03-03",
+    "name": "Novice Knowledge",
+    "slug": "novice-knowledge",
+    "difficulty": "Easy",
+    "description": "This is a collection of easy general knowledge questions.<br/>No pressure here, just the basics.",
+    "music": "../../src/audio/bgm/carnival-time.mp3",
+    "apiParams": {
+        "categories": [
+            "general_knowledge"
+        ],
+        "difficulties": [
+            "easy"
+        ],
+        "limit": 10
+    }
+}

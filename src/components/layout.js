@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 import Footer from './footer';
 
 import * as styles from "./layout.module.css";
@@ -18,10 +17,9 @@ const Layout = ({ children }) => {
 
             {/* NAVBAR */}
             <nav className={styles.navbar}>
-                {/* <ul className={styles.navLinks}> */}
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                {/* </ul> */}
+                <Link to="/">Home</Link>
+                <Link to="/quiz/">Quizzes</Link>
+                <Link to="/about">About</Link>
             </nav>
 
             {/* MAIN PAGE BODY AND FOOTER */}

@@ -4,6 +4,7 @@
     flex-flow: column;
     gap: 12px;
     height: 100%;
+    user-select: none;
 }
 
 /* PLAYER HUD */
@@ -33,7 +34,6 @@
     text-align: center;
     display: flex;
     flex-flow: column;
-
 }
 
 .question-box .question-number {

@@ -1,4 +1,46 @@
 hr {
     border: 1px solid black;
     width: 25%;
+    margin-top: 24px;
+}
+
+.quiz-panels {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.more-button {
+    background: #08072b;
+    box-shadow: 8px 8px #05153ba8;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    color: white;
+    margin-top: 24px;
+}
+
+.more-button:hover {
+    background: #211c7b;
+}
+
+.not-found {
+    text-align: center;
+}
+
+.not-found h1 {
+    margin: 0px;
+    font-size: 400px;
+    color: orange;
+    -webkit-text-stroke: 6px black;
+    text-shadow: 8px 8px black;
+    font-family: monospace;
+}
+
+.not-found p {
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-weight: bold;
 }

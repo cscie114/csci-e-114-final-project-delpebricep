@@ -3,7 +3,7 @@
  */
 module.exports = {
 	siteMetadata: {
-		title: "Gatsby Quiz Land",
+		title: "Quiz Land",
 		description: "Partake in a selection of trivia quizzes and test your knowledge.",
 		author: "Pascal Delpe-Brice",
 		info: "Final Project for CSCI E-114: Web Application Development With Jamstack",

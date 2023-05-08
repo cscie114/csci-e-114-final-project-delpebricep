@@ -1,5 +1,9 @@
 [
     {
+        "categoryId": "general_knowledge",
+        "name": "General Knowledge"
+    },
+    {
         "categoryId": "science",
         "name": "Science"
     },
@@ -26,10 +30,6 @@
     {
         "categoryId": "sport_and_leisure",
         "name": "Sports and Leisure"
-    },
-    {
-        "categoryId": "general_knowledge",
-        "name": "General Knowledge"
     },
     {
         "categoryId": "food_and_drink",

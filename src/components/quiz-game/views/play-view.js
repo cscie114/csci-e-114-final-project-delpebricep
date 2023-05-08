@@ -153,7 +153,7 @@ const QuestionBox = ({ questions, onAnswerSelected, onAllQuestionsCompleted }) =
 
     // This sub-component renders whether the user's selected answer is correct
     const AnswerResult = () => {
-        const text = currentAnswer?.isCorrect ? "CORRECT!" : "Incorrect...";
+        const text = currentAnswer?.isCorrect ? "CORRECT!" : "Incorrect.";
         const textColor = currentAnswer?.isCorrect ? "#aaff00" : "#ff1a1a";
 
         return (
@@ -172,9 +172,11 @@ const QuestionBox = ({ questions, onAnswerSelected, onAllQuestionsCompleted }) =
     // Build the whole element
     return (
         <div className={styles.questionBox}>
-            {/* QUESTION NUMBER AND TOTAL */}
+            {/* QUESTION NUMBER, TOTAL, AND CATEGORY */}
             <div className={styles.questionNumber}>
                 <span>Question #{currentQuestionNumber} of {totalQuestions}</span>
+                <br />
+                <span>Category: {currentQuestion.category.name}</span>
             </div>
 
             {/* QUESTION TEXT */}

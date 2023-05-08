@@ -1,0 +1,18 @@
+{
+    "quizId": 6,
+    "date": "2023-03-03",
+    "name": "Music Appreciation",
+    "slug": "music-appreciation",
+    "difficulty": "Medium",
+    "description": "Think you're a music expert? Answer these questions about a variety of instruments, bands, and other things that make noise.",
+    "music": "../../src/audio/bgm/golden-maze.mp3",
+    "apiParams": {
+        "categories": [
+            "music"
+        ],
+        "difficulties": [
+            "medium"
+        ],
+        "limit": 20
+    }
+}

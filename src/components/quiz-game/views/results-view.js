@@ -211,7 +211,7 @@ const SubmitForm = ({ quizId, score, gradeData }) => {
             });
             let data = await response.json();
 
-            // If anything goes wrong, throw the response's text
+            // If anything goes wrong, throw the response's error text
             if (!response.ok) {
                 throw data;
             }
