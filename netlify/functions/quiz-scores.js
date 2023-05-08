@@ -35,7 +35,9 @@ async function getScores(database, { quizId, limit = DEFAULT_LIMIT }) {
         { _id: 0 }
     )
     // Sort by score (descending) and return only N records.
-    .sort('score', -1).limit(limit).toArray();
+    .sort({'score': -1}).limit(parseInt(limit)).toArray();
+
+    await mongoClient.close();
 
     return {
         statusCode: 200,
