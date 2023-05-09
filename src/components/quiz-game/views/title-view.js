@@ -6,6 +6,9 @@
 
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faList } from '@fortawesome/free-solid-svg-icons';
+
 import * as styles from "./title-view.module.css";
 import Button from '../common/button';
 
@@ -44,8 +47,8 @@ const TitleView = ({ quiz, setCurrentView }) => {
 
             {/* BUTTONS TO GO TO OTHER SCREENS */}
             <div className="button-container">
-                <Button onClick={() => setCurrentView('play')}>Play</Button>
-                <Button onClick={() => setCurrentView('leaderboard')}>View Leaderboard</Button>
+                <Button onClick={() => setCurrentView('play')}><FontAwesomeIcon icon={faPlay} />&nbsp;Play</Button>
+                <Button onClick={() => setCurrentView('leaderboard')}><FontAwesomeIcon icon={faList} />&nbsp;View Leaderboard</Button>
             </div>
 
             {/* COPYRIGHT TEXT */}

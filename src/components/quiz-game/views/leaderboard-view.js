@@ -4,6 +4,10 @@
 */
 
 import React, { useState, useEffect, useCallback } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRefresh, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 import Button from '../common/button';
 
 import * as styles from "./leaderboard-view.module.css";
@@ -72,8 +76,13 @@ const LeaderboardView = ({ quiz, setCurrentView }) => {
             {/* BUTTONS TO GO TO OTHER SCREENS */}
             <div className="button-container" style={{ width: "100%" }}>
                 {/* OH, AND TO REFRESH THE LEADERBOARDS */}
-                <Button onClick={() => getScoreData()}>Refresh</Button>
-                <Button onClick={() => setCurrentView('title')}>Back to Title</Button>
+                <Button onClick={() => getScoreData()}>
+                    <FontAwesomeIcon icon={faRefresh} />&nbsp;Refresh
+                </Button>
+
+                <Button onClick={() => setCurrentView('title')}>
+                    <FontAwesomeIcon icon={faArrowLeft} />&nbsp;Back to Title
+                </Button>
             </div>
         </div>
     );

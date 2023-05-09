@@ -5,6 +5,8 @@
 
 import React, { useState, useEffect } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faArrowLeft, faList } from '@fortawesome/free-solid-svg-icons';
 import { Howl, Howler } from 'howler';
 import JSConfetti from 'js-confetti';
 
@@ -151,9 +153,15 @@ const ResultsView = ({ quiz, score, setCurrentView, sfxPlayer }) => {
 
             {/* BUTTONS TO GO TO OTHER SCREENS */}
             <div className="button-container" style={{ width: "100%" }}>
-                <Button onClick={() => setCurrentView('play')}>Play Again</Button>
-                <Button onClick={() => setCurrentView('leaderboard')}>View Leaderboard</Button>
-                <Button onClick={() => setCurrentView('title')}>Back to Title</Button>
+                <Button onClick={() => setCurrentView('play')}>
+                    <FontAwesomeIcon icon={faPlay} />&nbsp;Play Again
+                </Button>
+                <Button onClick={() => setCurrentView('leaderboard')}>
+                    <FontAwesomeIcon icon={faList} />&nbsp;View Leaderboard
+                </Button>
+                <Button onClick={() => setCurrentView('title')}>
+                    <FontAwesomeIcon icon={faArrowLeft} />&nbsp;Back to Title
+                </Button>
             </div>
         </div>
     );

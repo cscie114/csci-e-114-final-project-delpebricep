@@ -43,6 +43,7 @@ async function getScores(database, { quizId, limit = DEFAULT_LIMIT }) {
     };
 }
 
+
 /* 
     Given a quiz ID, name, score, and letter, 
     this function posts the latter three as to that quiz's leaderboard.

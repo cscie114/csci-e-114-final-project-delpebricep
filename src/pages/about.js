@@ -30,7 +30,7 @@ const AboutPage = () => {
                         <li><strong>&quot;Off to Osaka&quot;</strong>, by Kevin MacLeod</li>
                     </ul>
                     </li>
-                    <li><strong>In-Game Music</strong> from <em>Ms. Pac-Man: Quest for the Golden Maze</em>, by Composer Unknown (2001, Infogrames)</li>
+                    <li><strong>In-Game Music</strong> from <em>Ms. Pac-Man: Quest for the Golden Maze</em>, composer unknown (2001, Infogrames)</li>
                     <li><strong><a href="https://search.upright-music.pl/">Upright Music</a></strong><ul>
                         <li><strong>&quot;Carnival Time&quot;</strong>, by Brent Barkman, Carl Lenox, Peter Coulman, and Thomas David Thorney</li>
                     </ul>

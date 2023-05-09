@@ -30,8 +30,10 @@ body {
 .header .title {
     margin: 0px;
     color: #ffffff;
-    font-size: 2.5rem;
+    text-shadow: 4px 5px black;
+    font-size: 2.75rem;
     font-family: 'Arial Black';
+    -webkit-text-stroke: 1px black;
 }
 
 .header .subtitle {
