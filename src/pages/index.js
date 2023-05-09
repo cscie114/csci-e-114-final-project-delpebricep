@@ -30,9 +30,9 @@ const IndexPage = ({ data }) => {
                 />
 
                 <p style={{ marginBottom: 8 }}>
-                    Here at <b>Quiz Land</b>, take on a collection of API-generated quizzes and demonstrate your knowledge on about various topics.
+                    Here at <b>Quiz Land</b>, take on a collection of interactive, API-generated quizzes and demonstrate your knowledge on various topics.
                     <br />
-                    Did exceptionally well and have a need to brag? Submit quiz scores to the leaderboards and compare your grades to other users on this site around the world.
+                    Did exceptionally well and have a need to brag? Submit quiz scores to the leaderboards and compare your grades to other players around the world.
                 </p>
 
                 <p style={{ marginBottom: 8 }}>

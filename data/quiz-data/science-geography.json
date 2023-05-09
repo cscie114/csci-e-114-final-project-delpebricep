@@ -1,0 +1,19 @@
+{
+    "quizId": 93,
+    "date": "2023-04-26",
+    "name": "Science + Geography",
+    "slug": "science-geography",
+    "difficulty": "Medium",
+    "description": "A quiz about science and geography. An odd pair and an odd-numbered set of questions.",
+    "music": "../../src/audio/bgm/golden-maze.mp3",
+    "apiParams": {
+        "categories": [
+            "science",
+            "geography"
+        ],
+        "difficulties": [
+            "medium"
+        ],
+        "limit": 17
+    }
+}

@@ -18,18 +18,22 @@ module.exports = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: 'data',
-				path: `${__dirname}/data`,
-				ignore: [`**/\.*`]
+				path: `${__dirname}/data`
 			}
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: 'audio',
-				path: `${__dirname}/src/audio`,
-				ignore: [`**/\.*`]
+				path: `${__dirname}/src/audio`
 			}
 		},
-		`gatsby-transformer-remark`
+		`gatsby-transformer-remark`,
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				icon: 'src/images/icon.png'
+			}
+		}
 	]
 };

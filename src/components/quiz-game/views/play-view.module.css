@@ -26,7 +26,6 @@
     background: black;
     color: white;
     padding: 16px;
-    width: 95%;
     border-radius: 8px;
     flex: 1;
     align-self: center;
@@ -62,9 +61,10 @@
 }
 
 .answer-button {
-    height: 32px;
-    padding: 8px;
+    height: 40px;
+    padding: 4px;
     font-size: 12px;
+    font-weight: bold;
 }
 
 .answer-button:hover {

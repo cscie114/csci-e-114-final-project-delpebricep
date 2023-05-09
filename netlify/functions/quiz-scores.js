@@ -11,7 +11,7 @@
 const { MongoClient } = require("mongodb");
 const mongoClient = new MongoClient(process.env.MONGODB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
 });
 const clientPromise = mongoClient.connect();
 
@@ -37,9 +37,6 @@ async function getScores(database, { quizId, limit = DEFAULT_LIMIT }) {
     // Sort by score (descending) and return only N records.
     .sort({'score': -1}).limit(parseInt(limit)).toArray();
 
-    // Close the connection.
-    // await mongoClient.close();
-
     return {
         statusCode: 200,
         body: JSON.stringify(results),
@@ -59,18 +56,15 @@ async function postScore(database, { quizId, name, score, grade, percentage }) {
         };
     }
 
-    // Insert a new record to the database.
+    // Insert a new record into the database.
     const collection = database.collection(process.env.MONGODB_COLLECTION);
     const result = await collection.insertOne({
         quizId: parseInt(quizId),
         name,
         score: parseInt(score),
         grade,
-        percentage
+        percentage: parseInt(percentage)
     });
-
-    // Close the connection.
-    // await mongoClient.close();
 
     return {
         statusCode: 201,

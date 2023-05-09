@@ -10,28 +10,37 @@ My final project is a Gatsby website that uses [The Trivia API](https://the-triv
 ### Step 1: Installation
 
 To install this project, you must first clone this repository. 
-Next, use your preferred shell/terminal application to navigate to the project's folder (e.g., ```cd csci-e-114-final-project-delpebricep```).
+Next, use your preferred shell/terminal application to navigate to the project's folder with ```cd csci-e-114-final-project-delpebricep```.
 
 While in the project's directory, run ```npm install``` to install the project's NPM dependencies.
 
 
-### Step 2: Creating an Environment File
+### Step 2: MongoDB Setup
 
-Create a .env file at the root directory of your cloned repository. It must look like the following:
+**NOTE:** Teaching instructors may skip to Step 3, as they can use the .env file submitted through Canvas to handle MongoDB credentials.
 
+In order for the leaderboard feature and Netlify functions to work locally, you will need to make a MongoDB database.
+[Follow these instructions from the official MongoDB website](https://www.mongodb.com/basics/create-database) to set one up. I recommend making a free MongoDB Atlas account and hosting the database there so it can be up at all times.
+
+
+### Step 3: Creating an Environment File
+
+Create a .env file at the root directory of your cloned repository. Go to your MongoDB database and acquire its connection URI, its database name, and the name of the collection you would like to store user scores under. 
+
+The .env file must look like the following:
 ```
 MONGODB_URI="[MongoDB connection URI for your database goes here]"
 MONGODB_DATABASE="[MongoDB database name goes here]"
 MONGODB_COLLECTION="[MongoDB collection name goes here]"
 ```
 
-**NOTE:** Teaching instructors may use the .env file submitted through Canvas instead. It contains the MongoDB variables I used throughout development of this project.
+**NOTE:** Teaching instructors may use the .env file submitted through Canvas instead. It contains the MongoDB database credentials I used throughout development of this project.
 
 
 ### Step 3: Running the Project
 
 After completing the previous two steps, run ```npm start``` to run the project normally.
-To run the project locally with Netlify functions enabled, install the Netlify CLI then run
+To run the project locally with Netlify functions enabled, install the Netlify CLI then run ```netlify dev``.
 
 
 ## Assignment Components and Requirements
