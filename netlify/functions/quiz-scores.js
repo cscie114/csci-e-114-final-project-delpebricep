@@ -38,7 +38,7 @@ async function getScores(database, { quizId, limit = DEFAULT_LIMIT }) {
     .sort({'score': -1}).limit(parseInt(limit)).toArray();
 
     // Close the connection.
-    await mongoClient.close();
+    // await mongoClient.close();
 
     return {
         statusCode: 200,
@@ -70,7 +70,7 @@ async function postScore(database, { quizId, name, score, grade, percentage }) {
     });
 
     // Close the connection.
-    await mongoClient.close();
+    // await mongoClient.close();
 
     return {
         statusCode: 201,
