@@ -1,4 +1,4 @@
-# CSCI E-114 Final Projcet | Quiz Land
+# CSCI E-114 Final Project | Quiz Land
 
 ## Project Site
 https://quiz-land.netlify.app/
