@@ -31,7 +31,7 @@ const QuizPage = ({ data }) => {
 // Query every quiz we've created
 export const query = graphql`
     query {
-        allQuiz {
+        allQuiz(sort: {date: ASC}) {
             nodes {
                 quizId
                 name

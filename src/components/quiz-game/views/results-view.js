@@ -12,6 +12,7 @@ import * as styles from './results-view.module.css';
 import Button from '../common/button';
 import { getGradeFromNumber, sleep } from '../../../utils';
 import bgmHappyTune from "../../../audio/bgm/happy-tune.mp3";
+import { postLeaderboardScore } from '../../../leaderboard-utils';
 
 
 // Main component
@@ -25,7 +26,6 @@ const ResultsView = ({ quiz, score, setCurrentView, sfxPlayer }) => {
     // State variables
     const [isGradeVisible, setIsGradeVisible] = useState(false);
     const [canSubmit, setCanSubmit] = useState(false);
-    
     
     // This large effect is used to run a sequence of events in which the player's grade is revealed
     useEffect(() => {
@@ -45,8 +45,13 @@ const ResultsView = ({ quiz, score, setCurrentView, sfxPlayer }) => {
         // Play the drumroll
         sfxPlayer.playAsync('drumroll-start')
         .then(() => { 
-            // After the drumroll, cymbals crash
-            sfxPlayer.play('drumroll-end');
+            // After the drumroll, cymbals crash if the percentage is high
+            if (gradePercentage >= 70) {
+                sfxPlayer.play('drumroll-end');
+            } else {
+                // Otherwise, play a lousy rimshot
+                sfxPlayer.play('rimshot');
+            }
             
             // The grade is now visible
             setIsGradeVisible(true);
@@ -55,7 +60,7 @@ const ResultsView = ({ quiz, score, setCurrentView, sfxPlayer }) => {
             if (confettiNumber > 0) {
                 jsConfetti.addConfetti({
                     confettiRadius: 4,
-                    confettiNumber,
+                    confettiNumber
                 });
             }
 
@@ -181,6 +186,7 @@ const SubmitForm = ({ quizId, score, gradeData, percentage }) => {
 
     // State variables
     const [state, setState] = useState(STATE_IDLE);
+    const [name, setName] = useState("");
     const [errorText, setErrorText] = useState("");
     
     // Callback for submitting the score to the leaderboard.
@@ -188,34 +194,11 @@ const SubmitForm = ({ quizId, score, gradeData, percentage }) => {
         // Prevent the browser from reloading the page
         event.preventDefault();
 
-        // Read the form data
-        const form = event.target;
-        const formData = new FormData(form);
-
-        // Set some extra form fields we need
-        formData.set("quizId", quizId);
-        formData.set("score", score);
-        formData.set("grade", letter);
-        formData.set("percentage", percentage);
-
-        // Make form data a string
-        const stringData = JSON.stringify(Object.fromEntries(formData));
-
         try {
             setState(STATE_SUBMITTING);
 
-            // Wait for data to be sent to the serverless function
-            let response = await fetch("/.netlify/functions/quiz-scores", {
-                method: form.method,
-                body: stringData,
-                headers: { "Content-Type": "application/json" }
-            });
-            let data = await response.json();
-
-            // If anything goes wrong, throw the response's error text
-            if (!response.ok) {
-                throw data;
-            }
+            // Send the score.
+            await postLeaderboardScore(quizId, { name, score, grade: letter, percentage });
 
             // If we got here, it was submitted successfully
             setState(STATE_SUCCESS);
@@ -248,7 +231,13 @@ const SubmitForm = ({ quizId, score, gradeData, percentage }) => {
                             <label htmlFor="input-name">
                                 Name:
                             </label>
-                            <input id="input-name" type="text" name="name" />
+
+                            <input 
+                                id="input-name" 
+                                type="text" 
+                                value={name} 
+                                onInput={(event) => setName(event.target.value)} 
+                            />
 
                             <Button type="submit" classes={[styles.formButton]}>
                                 {state === STATE_SUBMITTING ? "Submitting..." : "Submit"}

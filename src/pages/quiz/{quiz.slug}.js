@@ -3,11 +3,13 @@ import { graphql } from "gatsby";
 
 import Layout from "../../components/layout";
 import QuizGame from "../../components/quiz-game/";
+import { shuffle } from "../../utils";
 
 
 // A quiz's individual page
 const QuizPage = ({ data }) => {
     const { quiz } = data;
+    quiz.questions = shuffle(quiz.questions);
 
     return (
         <Layout>

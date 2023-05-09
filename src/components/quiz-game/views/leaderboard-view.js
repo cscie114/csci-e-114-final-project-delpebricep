@@ -7,6 +7,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Button from '../common/button';
 
 import * as styles from "./leaderboard-view.module.css";
+import { getLeaderboardScores } from '../../../leaderboard-utils';
 
 
 // These finite states control how the user interacts with this component
@@ -29,8 +30,7 @@ const LeaderboardView = ({ quiz, setCurrentView }) => {
 
         try {
             // Get this quiz's scores
-            const response = await fetch(`/.netlify/functions/quiz-scores?quizId=${quizId}`, { method: "GET" });
-            const data = await response.json();
+            const data = await getLeaderboardScores(quizId);
 
             setScores(data);
             setState(STATE_DISPLAY);
@@ -86,7 +86,7 @@ const LeaderboardTable = ({ scores = [], totalQuestions }) => {
     if (scores.length === 0) {
         return (
             <div className={styles.centerContainer}>
-                <p>This leaderboard is empty. Play this quiz and be the first to submit a score.</p>
+                <p>This leaderboard is empty.<br />Play this quiz and be the first to submit a score.</p>
             </div>
         );
     }

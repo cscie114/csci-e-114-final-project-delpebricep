@@ -1,6 +1,6 @@
 {
-    "quizId": 20,
-    "date": "2023-03-03",
+    "quizId": 54,
+    "date": "2023-04-13",
     "name": "History 101",
     "slug": "history-101",
     "difficulty": "Easy",
@@ -13,6 +13,6 @@
         "difficulties": [
             "easy"
         ],
-        "limit": 15
+        "limit": 10
     }
 }

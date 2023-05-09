@@ -37,6 +37,7 @@ async function getScores(database, { quizId, limit = DEFAULT_LIMIT }) {
     // Sort by score (descending) and return only N records.
     .sort({'score': -1}).limit(parseInt(limit)).toArray();
 
+    // Close the connection.
     await mongoClient.close();
 
     return {
@@ -50,6 +51,14 @@ async function getScores(database, { quizId, limit = DEFAULT_LIMIT }) {
     this function posts the latter three as to that quiz's leaderboard.
 */
 async function postScore(database, { quizId, name, score, grade, percentage }) {
+    // No name? Return an error.
+    if (!name) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify("Please enter a name when submitting a score.")
+        };
+    }
+
     // Insert a new record to the database.
     const collection = database.collection(process.env.MONGODB_COLLECTION);
     const result = await collection.insertOne({
@@ -60,13 +69,8 @@ async function postScore(database, { quizId, name, score, grade, percentage }) {
         percentage
     });
 
-    // No name? Return an error.
-    if (!name) {
-        return {
-            statusCode: 400,
-            body: JSON.stringify("Please enter a name when submitting a score.")
-        }
-    }
+    // Close the connection.
+    await mongoClient.close();
 
     return {
         statusCode: 201,

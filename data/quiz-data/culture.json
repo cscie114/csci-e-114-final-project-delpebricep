@@ -1,14 +1,14 @@
 {
     "quizId": 10,
-    "date": "2023-03-03",
+    "date": "2023-05-05",
     "name": "Culture Vulture",
     "slug": "culture-vulture",
     "difficulty": "Hard",
-    "description": "Do you find yourself engrossed in the high arts? Try this quiz about art and literature?",
+    "description": "Do you find yourself engrossed in the high arts?<br />Try this quiz on art and literature.",
     "music": "../../src/audio/bgm/off-to-osaka.ogg",
     "apiParams": {
         "categories": [
-            "art_and_literature"
+            "arts_and_literature"
         ],
         "difficulties": [
             "medium",

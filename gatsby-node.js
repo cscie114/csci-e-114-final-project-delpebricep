@@ -1,4 +1,6 @@
-require("dotenv").config();
+require("dotenv").config({
+    path: `.env`,
+});
 
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
@@ -48,9 +50,9 @@ const fetchExternalQuestions = async function ({ categories, difficulties, limit
     
             // Map the question's category to its full information in the JSON file
             let fullCategory = ALL_CATEGORIES[DEFAULT_CATEGORY_INDEX];
-            for (c of ALL_CATEGORIES) {
-                if (categoryId === c.categoryId) {
-                    fullCategory = c;
+            for (const _category of ALL_CATEGORIES) {
+                if (categoryId === _category.categoryId) {
+                    fullCategory = _category;
                     break; 
                 }
             }

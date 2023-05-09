@@ -5,6 +5,7 @@ import sfxWrong from "./audio/sfx/answer-wrong.wav";
 import sfxApplause from "./audio/sfx/applause.wav";
 import sfxDrumrollStart from "./audio/sfx/drumroll-start.wav";
 import sfxDrumrollEnd from "./audio/sfx/drumroll-end.wav";
+import sfxRimshot from "./audio/sfx/rimshot.wav";
 import sfxFanfareGood from "./audio/sfx/fanfare-good.wav";
 import sfxFanfareOkay from "./audio/sfx/fanfare-okay.wav";
 import sfxFanfarePoor from "./audio/sfx/fanfare-poor.wav";
@@ -23,6 +24,7 @@ export default class SFXPlayer {
             'applause': sfxApplause,
             'drumroll-start': sfxDrumrollStart,
             'drumroll-end': sfxDrumrollEnd,
+            'rimshot': sfxRimshot,
             'fanfare-good': sfxFanfareGood,
             'fanfare-okay': sfxFanfareOkay,
             'fanfare-poor': sfxFanfarePoor,

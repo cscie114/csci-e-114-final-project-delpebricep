@@ -1,11 +1,11 @@
-# CSCI E-114 Final Projcet | Gatsby Quiz Land
+# CSCI E-114 Final Projcet | Quiz Land
 
-This Gatsby website 
+My final project is a Gatsby website that uses [The Trivia API](https://the-trivia-api.com/) to generate random collections of trivia questions and display each of them as interactive quiz games. Users can answer questions and submit their scores to online leaderboards hosted on MongoDB Atlas.
 
 **Project Site**: https://quiz-land.netlify.app/
 
 
-## Application Setup
+## Application Local Setup
 
 ### Step 1: Installation
 
@@ -17,38 +17,62 @@ While in the project's directory, run ```npm install``` to install the project's
 
 ### Step 2: Creating an Environment File
 
-Create a .env file at the root directory of your cloned repository. It must look like the following, substituting the client ID, client secret, and access token accordingly:
+Create a .env file at the root directory of your cloned repository. It must look like the following:
 
 ```
-MONGODB_URI="[your client ID goes here]"
-MONGODB_DATABASE="[your client secret goes here]"
-MONGODB_COLLECTION="[your access token goes here]"
+MONGODB_URI="[MongoDB connection URI for your database goes here]"
+MONGODB_DATABASE="[MongoDB database name goes here]"
+MONGODB_COLLECTION="[MongoDB collection name goes here]"
 ```
+
+**NOTE:** Teaching instructors may use the .env file submitted through Canvas instead. It contains the MongoDB variables I used throughout development of this project.
+
 
 ### Step 3: Running the Project
 
-After completing the previous two steps, run ```npm start``` to execute the project.
+After completing the previous two steps, run ```npm start``` to run the project normally.
+To run the project locally with Netlify functions enabled, install the Netlify CLI then run
 
 
 ## Assignment Components and Requirements
 
 ### An "Extraordinary Distinction": Leaderboards with Serverless Functions 
 
-I made use of Netlify's serverless functions to implement Quiz Land's leaderboard feature. The function allows users to query other players' high scores for a certain quiz, as well as submit their own scores. Player names and scores are stored in the MongoDB database.
+I made use of Netlify's serverless functions to implement Quiz Land's leaderboard feature. The function allows users to query other players' high scores for a certain quiz, as well as submit their own scores. Player names and scores are stored on a MongoDB Atlas database.
 
 
-## Resource Credits
+## Credits
 
-I made use of a few internet resources to build certain parts of this website. They are all listed below.
+These are credits for of all the assets that I did not make, as well as a few programming resources that helped me implement certain features and address certain quirks.
 
+### Programming Resources
+- [How to Randomize and Shuffle an Javascript Array](https://www.tutorialspoint.com/How-to-randomize-shuffle-a-JavaScript-array), from TutorialsPoint
+- [MongoDB and Netlify Serverless Functions](https://www.mongodb.com/developer/languages/javascript/developing-web-application-netlify-serverless-functions-mongodb/), from the MongoDB website
+- [Using a Custom Webpack Loader with Gatsby](https://stackoverflow.com/questions/68162448/how-to-use-a-custom-webpack-loader-in-gatsby-js), from StackOverflow
 
+### Music
+- **[APM Music](https://www.apmmusic.com/)**
+  - **"Bowler Hats"**, by David Farnon
+  - **"'Er Indoors"**, by Johnny Hawksworth
+  - **"Happy Tune"**, by Dieter Reith from _Good Ol' Hammond Organ_
+  - **"Quiz Organ (A)"**, by Curtis Schwartz
+  - **"Quiz Organ (B)"**, by Curtis Schwartz
+  - **"Quiz Organ (C)"**, by Curtis Schwartz
+  - **"Ramblin' Man From Gramblin'"**, by Sam Spence
+  - **"Scene Ending"**, by Dieter Reith from _Good Ol' Hammond Organ_ 
+- **[Incompetech](https://incompetech.com/)**
+  - **"Acid Jazz"**, by Kevin MacLeod
+  - **"Off to Osaka"**, by Kevin MacLeod
+- **In-Game Music** from _Ms. Pac-Man: Quest for the Golden Maze_, by Composer Unknown (2001, Infogrames)
+- **[Upright Music](https://search.upright-music.pl/)**
+  - **"Carnival Time"**, by Brent Barkman, Carl Lenox, Peter Coulman, and Thomas David Thorney
 
-Resources
+### Sound Effects
+- **[Freesound](https://www.freesound.org)**
+	- adriann
+	- xtrgamr
+- **[Mixkit.co](https://mixkit.co/)**
 
-- SFX
-	- freesound.org
-		- adriann
-		
-
-[MongoDB and Netlify Serverless Functions](https://www.mongodb.com/developer/languages/javascript/developing-web-application-netlify-serverless-functions-mongodb/)
-		
+### Others
+- "Ubuntu" and "Source Code Pro" fonts were acquired from [Google Fonts](https://fonts.google.com/).
+- As stated before, all trivia data was provided via [The Trivia API](https://the-trivia-api.com/).

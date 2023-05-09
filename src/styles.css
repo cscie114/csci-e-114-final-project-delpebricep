@@ -26,6 +26,15 @@ hr {
     background: #211c7b;
 }
 
+.credits h3 {
+    margin-bottom: 0px;
+}
+
+.credits ul {
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
 .not-found {
     text-align: center;
 }

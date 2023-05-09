@@ -1,0 +1,18 @@
+{
+    "quizId": 33,
+    "date": "2023-04-13",
+    "name": "Sports Smarts",
+    "slug": "sports-smarts",
+    "difficulty": "Medium",
+    "description": "Hold on to your seats, sports fans. These questions are right up your alley.",
+    "music": "../../src/audio/bgm/ramblin-gramblin.ogg",
+    "apiParams": {
+        "categories": [
+            "sport_and_leisure"
+        ],
+        "difficulties": [
+            "medium"
+        ],
+        "limit": 20
+    }
+}
