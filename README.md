@@ -1,8 +1,11 @@
 # CSCI E-114 Final Projcet | Quiz Land
 
-My final project is a Gatsby website that uses [The Trivia API](https://the-trivia-api.com/) to generate random collections of trivia questions and display each of them as interactive quiz games. Users can answer questions and submit their scores to online leaderboards hosted on MongoDB Atlas.
+## Project Site
+https://quiz-land.netlify.app/
 
-**Project Site**: https://quiz-land.netlify.app/
+
+## About
+My final project is a Gatsby website that uses [The Trivia API](https://the-trivia-api.com/) to generate random collections of trivia questions and display each of them as interactive quiz games. Users can answer questions and submit their scores to online leaderboards hosted on MongoDB Atlas.
 
 
 ## Application Local Setup
